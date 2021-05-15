@@ -1,4 +1,5 @@
 <script>
+	import TextBox from './TextBox.svelte';
 	import Parsed from './Parsed.svelte';
 	
 	let text = `
@@ -13,26 +14,38 @@
 	$: textList = text.split('\n')
 </script>
 
-<div class="editor">
-	<textarea bind:value={text} />
-</div>
+<main class="content">
+	<section class="renderer">
+		{#each textList as textLine}
+			<Parsed text={textLine}/>
+		{/each}
+	</section>
 
-<div class="renderer">
-	{#each textList as textLine}
-	<Parsed text={textLine}/>
-	{/each}
-</div>
+	<section class="editor">
+		<TextBox bind:text={text}/>
+	</section>
+</main>
 
 <style>
-	textarea {
-		width: 200px;
-		height: 100px;
+	.content {
+		display: flex;
+		flex-direction: column;
+		max-width: 768px;
+		height: 100vh;
 	}
-
+	
 	.renderer {
+		width: 100%;
+		height: 50%;
+		padding: 8px;
 		border: solid 1px black;
 		border-radius: 4px;
-		padding: 8px;
-		width: 200px;
+		box-sizing: border-box;
+		overflow: auto;
+	}
+	
+	.editor {
+		width: 100%;
+		height: 50%;
 	}
 </style>
