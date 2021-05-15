@@ -18,6 +18,7 @@
 				type = 'alert';
 				parsed = text.replace('<> ', '');
 		} else {
+        type = '';
 				parsed = text;
 		}
 	}
