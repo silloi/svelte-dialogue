@@ -1,7 +1,8 @@
 <script>
 	import Editor from './Editor.svelte';
 	import Parsed from './Parsed.svelte';
-	
+	import Parsed2 from './Parsed2.svelte';
+
 	let text = `=> You say yes
 
 <= I say no
@@ -13,19 +14,34 @@
 <> Oh no
 
 == Hello hello`;
-	
-	$: textList = text.split('\n\n')
+
+	let text2 = `You: You say yes
+
+/I: I say no
+
+: You say stop
+
+/: and I say go go go
+
+!: Oh no
+
+?: You say good bye?
+
+and I say Hello.`;
+
+	$: textList = text2.split('\n\n')
 </script>
 
 <main class="content">
 	<section class="renderer">
 		{#each textList as textLine}
-			<Parsed text={textLine}/>
+			<!-- <Parsed text={textLine}/> -->
+			<Parsed2 text={textLine}/>
 		{/each}
 	</section>
 
 	<section class="editor">
-		<Editor bind:text={text}/>
+		<Editor bind:text={text2}/>
 	</section>
 </main>
 
@@ -45,6 +61,8 @@
 		border-radius: 4px;
 		box-sizing: border-box;
 		overflow: auto;
+		display: flex;
+		flex-direction: column;
 	}
 	
 	.editor {
