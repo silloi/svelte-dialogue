@@ -52,7 +52,12 @@
 	section {
 		margin: 4px 0;
 	}
-
+	
+	section span {
+		padding: 0 2px;
+		font-size: 0.8rem;
+	}
+	
 	section p {
 		word-break: break-word;
 		white-space: pre-wrap;

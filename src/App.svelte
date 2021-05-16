@@ -3,7 +3,7 @@
 	import Parsed from './Parsed.svelte';
 	import Parsed2 from './Parsed2.svelte';
 
-	let text = `=> You say yes
+	let text1 = `=> You say yes
 
 <= I say no
 
@@ -28,8 +28,25 @@
 ?: You say good bye?
 
 and I say Hello.`;
+	
+	let text3 = `/孟懿子: 問孝
 
-	$: textList = text2.split('\n\n')
+子: 無違
+
+!: 樊遲御
+
+子: 孟孫問孝於我
+我對曰無違
+
+/樊遲: 何謂也
+
+子: 生事之以禮
+死葬之以禮
+祭之以禮`;
+
+	let text = text3;
+
+	$: textList = text.split('\n\n')
 </script>
 
 <main class="content">
@@ -41,7 +58,7 @@ and I say Hello.`;
 	</section>
 
 	<section class="editor">
-		<Editor bind:text={text2}/>
+		<Editor bind:text={text3}/>
 	</section>
 </main>
 
