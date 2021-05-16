@@ -10,15 +10,17 @@
 	let parsed = '';
 	
 	$: {
+		console.log('parse', text);
 		const array = text.split(': ');
-		
-		console.log('array', array);
-		
+
 		if (array.length > 1) {
 		
 			if (array[0].indexOf('/') === 0) {
 					type = 'subject';
 					person = array[0].replace('/', '');
+			} else if (array[0].indexOf('\\') === 0) {
+					type = 'object';
+					person = array[0].replace('\\', '');
 			} else if (text.indexOf('?') === 0) {
 					type = 'question';
 					person = array[0].replace('?', '');
@@ -61,10 +63,7 @@
 	section p {
 		word-break: break-word;
 		white-space: pre-wrap;
-		border: solid 1px;
-		border-radius: 6px;
 		margin: 0;
-		padding: 4px;
 		width: fit-content;
 	}
 
@@ -77,9 +76,21 @@
 		align-self: flex-start;
 		text-align: left;
 	}
-
+	
+	.subject p, .object p {
+		padding: 4px;
+		border: solid 1px;
+		border-radius: 6px;
+	}
+	
 	.question, .alert {
 		align-self: center;
 		text-align: center;
+	}
+	
+	.alert p {
+		padding: 4px 12px;
+		border: solid 1px;
+		border-radius: 16px;
 	}
 </style>

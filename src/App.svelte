@@ -1,7 +1,6 @@
 <script>
 	import Editor from './Editor.svelte';
-	import Parsed from './Parsed.svelte';
-	import Parsed2 from './Parsed2.svelte';
+	import Renderer from './Renderer.svelte';
 
 	let text1 = `=> You say yes
 
@@ -46,19 +45,15 @@ and I say Hello.`;
 
 	let text = text3;
 
-	$: textList = text.split('\n\n')
 </script>
 
 <main class="content">
 	<section class="renderer">
-		{#each textList as textLine}
-			<!-- <Parsed text={textLine}/> -->
-			<Parsed2 text={textLine}/>
-		{/each}
+		<Renderer text={text}/>
 	</section>
 
 	<section class="editor">
-		<Editor bind:text={text3}/>
+		<Editor bind:text={text}/>
 	</section>
 </main>
 
@@ -78,8 +73,6 @@ and I say Hello.`;
 		border-radius: 4px;
 		box-sizing: border-box;
 		overflow: auto;
-		display: flex;
-		flex-direction: column;
 	}
 	
 	.editor {
