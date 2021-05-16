@@ -68,9 +68,6 @@ and I say Hello.`;
 	.renderer {
 		width: 100%;
 		height: 50%;
-		padding: 8px;
-		border: solid 1px black;
-		border-radius: 4px;
 		box-sizing: border-box;
 		overflow: auto;
 	}
