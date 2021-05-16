@@ -72,7 +72,7 @@
 		padding-right: 4rem;
 	}
 	
-	.subject p, .object p {
+	.subject .message, .object p {
 		padding: 4px;
 		border: solid 1px;
 		border-radius: 6px;
@@ -81,6 +81,7 @@
 	.question, .alert {
 		align-self: center;
 		text-align: center;
+		padding: 0 4rem;
 	}
 	
 	.alert p {
