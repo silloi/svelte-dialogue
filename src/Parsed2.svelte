@@ -44,10 +44,10 @@
 		{#if person}
 			<span>{person}</span>
 		{/if}
-		<p>{parsed}</p>
+		<p class="message">{parsed}</p>
 	</section>
 {:else}
-	<p>{parsed}</p>
+	<p class="message">{parsed}</p>
 {/if}
 
 <style>
@@ -58,13 +58,6 @@
 	section span {
 		padding: 0 2px;
 		font-size: 0.8rem;
-	}
-	
-	section p {
-		word-break: break-word;
-		white-space: pre-wrap;
-		margin: 0;
-		width: fit-content;
 	}
 
 	.subject {
@@ -93,4 +86,13 @@
 		border: solid 1px;
 		border-radius: 16px;
 	}
+	
+	.message {
+		word-break: break-word;
+		white-space: pre-wrap;
+		margin: 0;
+		width: fit-content;
+		text-align: left;
+	}
+
 </style>
