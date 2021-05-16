@@ -63,11 +63,13 @@
 	.subject {
 		align-self: flex-end;
 		text-align: right;
+		padding-left: 4rem;
 	}
 	
 	.object {
 		align-self: flex-start;
 		text-align: left;
+		padding-right: 4rem;
 	}
 	
 	.subject p, .object p {
