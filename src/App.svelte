@@ -2,8 +2,7 @@
 	import Editor from './Editor.svelte';
 	import Parsed from './Parsed.svelte';
 	
-	let text = `
-=> You say yes
+	let text = `=> You say yes
 
 <= I say no
 
@@ -13,8 +12,7 @@
 
 <> Oh no
 
-== Hello hello
-`;
+== Hello hello`;
 	
 	$: textList = text.split('\n\n')
 </script>
