@@ -18,7 +18,7 @@
 				type = 'alert';
 				parsed = text.replace('<> ', '');
 		} else {
-        type = '';
+				type = '';
 				parsed = text;
 		}
 	}
@@ -29,6 +29,7 @@
 <style>
 	p {
 		word-break: break-word;
+		white-space: pre-wrap;
 	}
 	
 	.subject {

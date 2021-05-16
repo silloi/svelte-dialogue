@@ -1,17 +1,22 @@
 <script>
-	import TextBox from './TextBox.svelte';
+	import Editor from './Editor.svelte';
 	import Parsed from './Parsed.svelte';
 	
 	let text = `
 => You say yes
+
 <= I say no
+
 => You say stop
+
 <= and I say go go go
+
 <> Oh no
+
 == Hello hello
 `;
 	
-	$: textList = text.split('\n')
+	$: textList = text.split('\n\n')
 </script>
 
 <main class="content">
@@ -22,7 +27,7 @@
 	</section>
 
 	<section class="editor">
-		<TextBox bind:text={text}/>
+		<Editor bind:text={text}/>
 	</section>
 </main>
 
