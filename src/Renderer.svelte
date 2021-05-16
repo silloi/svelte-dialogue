@@ -4,7 +4,7 @@
 	
 	export let text = '';
 	
-	$: textList = text.split('\n\n')
+	$: textList = text.replace(/(\n){2,}/g, '\n\n').split('\n\n')
 </script>
 
 <div class="renderer-inner">
