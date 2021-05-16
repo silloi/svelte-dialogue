@@ -43,7 +43,14 @@ and I say Hello.`;
 死葬之以禮
 祭之以禮`;
 
-	let text = text3;
+	let text = '';
+
+	// As with JSON, use the Fetch API & ES6
+	fetch('doc/crito.txt')
+		.then(response => response.text())
+		.then(data => {
+			text = data;
+		});
 
 </script>
 
@@ -52,9 +59,9 @@ and I say Hello.`;
 		<Renderer text={text}/>
 	</section>
 
-	<section class="editor">
+	<!-- <section class="editor">
 		<Editor bind:text={text}/>
-	</section>
+	</section> -->
 </main>
 
 <style>
@@ -67,9 +74,8 @@ and I say Hello.`;
 	
 	.renderer {
 		width: 100%;
-		height: 50%;
+		height: 100%;
 		box-sizing: border-box;
-		overflow: auto;
 	}
 	
 	.editor {
